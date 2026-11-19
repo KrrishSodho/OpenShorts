@@ -1,57 +1,67 @@
+<div align="center">
+
 # OpenShorts
-> Open-source, self-hosted short-form video generator. Cut long videos and podcasts into 9:16 vertical shorts with motion graphics and captions.
+### 🎬 Open Source Self-Hosted Clip Generator
 
-OpenShorts runs locally on your machine. Speech transcription is powered by Faster-Whisper, motion graphics are rendered with Remotion (React), and clip discovery is handled by Google Gemini using only the actual words said in the video.
+Turn long-form videos into high-retention 9:16 vertical shorts (Reels, TikToks, Shorts) with grounded speech AI, 14 editable Remotion motion graphics archetypes, and local offline processing.
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![Remotion 4.0](https://img.shields.io/badge/Remotion-4.0-0B84FE.svg?logo=react&logoColor=white)](https://www.remotion.dev/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Electron 33](https://img.shields.io/badge/Electron-33-47848F.svg?logo=electron&logoColor=white)](https://www.electronjs.org/)
 
-## Why OpenShorts?
+[Features](#features) • [Quick Start](#quick-start) • [Desktop App](#desktop-app) • [Motion Archetypes](#motion-archetypes) • [Architecture](#architecture) • [Contributing](#contributing)
 
-Most AI video clip tools (Opus Clip, Klap, Munch) are paid cloud subscriptions that upload your raw video to external servers, burn in basic captions, and offer minimal control over visual styling.
-
-OpenShorts is designed differently:
-- **Private & Local-First:** Audio transcription (Whisper) and video rendering (FFmpeg + Remotion) run directly on your hardware.
-- **Zero Hallucinations:** The AI selects clips, hooks, and keywords strictly from transcript word timestamps. It never invents fake metrics, quotes, or claims.
-- **14 Editable Remotion Graphics:** Includes kinetic text, explainer timelines, metric gauges, split-screen comparisons, and editorial pull quotes. Reposition on canvas with drag-and-drop, scale font size (1.0x to 2.3x), and customize hex colors (`#FFFFFF`).
-- **Zero API Calls During Editing:** Gemini is called once per video to plan clips. Scrubbing, styling, reordering, and MP4 rendering require zero AI tokens.
+</div>
 
 ---
 
-## How It Works
+## Overview
 
-```
-Long Video (File or YouTube URL)
-       │
-       ▼
-[1] Local Audio Extraction & Word-Level Transcription (Faster-Whisper)
-       │
-       ▼
-[2] Single-Request Clip & Hook Discovery (Google Gemini 2.5 / 3.5 / 3.8)
-       │
-       ▼
-[3] Motion Studio Editor (Canvas Drag, Hex Color Picker, 14 Graphic Archetypes)
-       │
-       ▼
-[4] Production 1080x1920 MP4 Export (Remotion + FFmpeg)
-```
+Most AI short-form video tools are subscription-based cloud services that upload your footage to third-party servers, burn basic subtitles, and give you almost no control over graphic styling or layout.
 
-1. **Ingest & Transcribe:** Feed a YouTube URL or a local MP4/MKV/MOV file. Faster-Whisper transcribes speech into word-level timestamps locally on CPU or GPU.
-2. **Find High-Retention Clips:** A single prompt sends the numbered transcript words to Gemini (`gemini-2.5-flash`, `gemini-3.5-flash-lite`, or `gemini-3.8-flash`). It identifies candidate shorts, opening hook windows, and key narrative moments.
-3. **Edit in Motion Studio:**
-   - Choose from 14 built-in motion graphics.
-   - Drag graphics directly on the video player with 50% snap lines and caption safe-zone enforcement.
-   - Adjust scale (1.0x to 2.3x) and set custom hex colors with the native pipette color dropper.
-4. **Export:** Render clean 1080x1920 vertical MP4s with multi-track audio and procedural sound effects.
+**OpenShorts** is an open-source, self-hosted alternative designed for creators and developers who want complete control over their workflow:
+- **100% Local & Private Processing:** Speech transcription (Whisper) and video rendering (FFmpeg + Remotion) run directly on your own hardware. Your raw media never leaves your computer.
+- **Transcript-Grounded AI Planning:** The AI identifies clips, hooks, and keywords strictly from transcript word timestamps. It never fabricates quotes, statistics, or metrics.
+- **Production Motion Graphics:** Includes 14 built-in Remotion archetypes that can be repositioned directly on the canvas, dynamically scaled, and styled with custom brand colors.
+- **Zero Token Cost While Editing:** Gemini is invoked only once per video to plan candidate shorts. Scrubbing the timeline, repositioning graphics, modifying text, and rendering final MP4s require zero AI calls.
+
+---
+
+## Features
+
+### 1. Local Speech-to-Text & Word Alignment
+- Powered by `faster-whisper` for fast, offline audio transcription on CPU or CUDA GPU.
+- Generates precise word-level timestamps used to snap subtitle timing and trigger motion graphic animations at the exact moment a word is spoken.
+
+### 2. Single-Request Short Discovery
+- Sends timestamped transcript words to Google Gemini (`gemini-2.5-flash`, `gemini-3.5-flash-lite`, or `gemini-3.8-flash`) in a single prompt.
+- Extracts viral candidate clips, opening hook windows (0:00 - 2.4s), narrative setups, and payoffs without hallucinating content.
+
+### 3. 14 Remotion Motion Graphic Archetypes
+- Deterministic, frame-accurate motion graphics built with Remotion and React.
+- Covers kinetic word stacks, explainer timelines, radial stat dials, rolling counters, 2-column contrast cards, and editorial pull quotes.
+- Live canvas overlay with interactive drag-and-drop handles, center-snapping guides, and caption safe-zone enforcement.
+
+### 4. Custom Styling & Reusable Color System
+- Direct uppercase Hex color input (`#FFFFFF`, `#00F5FF`, `#FF2E54`) with a native pipette color dropper and preset brand swatches.
+- Granular text scaling (1.0x up to 2.3x) for high-impact mobile viewing.
+- Theming presets: Swiss Paper, Crimson Tape, Cyber Neon, Studio Clean, and Technical Explainer.
+
+### 5. Multi-Track Audio Engine
+- Procedural sound effect generation (whooshes, pops, clicks, risers, chimes, sub-bass hits) normalized to -3 dBFS.
+- Individual volume faders for speech audio, background music, and SFX with master muting.
 
 ---
 
 ## Quick Start
 
 ### Prerequisites
-- Python 3.10+
-- Node.js 18+
-- FFmpeg (must be available in your system PATH, or use the Desktop build)
-- A free Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+- **Python 3.10+**
+- **Node.js 18+** (with npm)
+- **FFmpeg** on system PATH (or use the standalone Desktop distribution)
+- A **Gemini API Key** from [Google AI Studio](https://aistudio.google.com/app/apikey) (Free Tier available)
 
 ### 1. Clone & Configure
 
@@ -59,11 +69,11 @@ Long Video (File or YouTube URL)
 git clone https://github.com/KrrishSodho/OpenShorts.git
 cd OpenShorts
 
-# Copy environment template
+# Create environment file from template
 cp .env.example .env
 ```
 
-Edit `.env` and paste your Gemini API key:
+Open `.env` and add your Gemini API key:
 ```ini
 GEMINI_API_KEY=your_gemini_api_key_here
 SELECTED_GEMINI_MODEL=gemini-2.5-flash
@@ -71,43 +81,43 @@ SELECTED_GEMINI_MODEL=gemini-2.5-flash
 
 ### 2. Run OpenShorts
 
-#### On Windows:
+#### Windows:
 ```bat
 start_studio.bat
 ```
 
-#### On macOS / Linux:
+#### macOS / Linux:
 ```bash
 chmod +x start_studio.sh
 ./start_studio.sh
 ```
 
-#### With Docker Compose:
+#### Docker Compose:
 ```bash
 docker compose up --build
 ```
 
-#### Manual Dev Launch:
+#### Manual Development:
 ```bash
-# Terminal 1: Backend
+# Terminal 1: Backend Server
 pip install -r requirements.txt
 py -3 -m uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
 
-# Terminal 2: Frontend
+# Terminal 2: Frontend Studio
 cd frontend
 npm install
 npm run dev
 ```
 
-Open your browser at **`http://localhost:3000`** (FastAPI Swagger docs at `http://127.0.0.1:8000/docs`).
+Open your browser at **`http://localhost:3000`** (FastAPI documentation at `http://127.0.0.1:8000/docs`).
 
 ---
 
-## Desktop App (Windows)
+## Desktop App
 
-OpenShorts includes an Electron distribution that bundles the frontend, frozen Python backend, and static FFmpeg into an offline standalone package.
+OpenShorts can be packaged into a standalone Windows desktop application (`.exe`) that bundles the Electron UI, a frozen Python backend, and static FFmpeg binaries into an offline executable.
 
-To build the desktop executable:
+To package the desktop app locally:
 ```bash
 cd desktop
 npm install
@@ -115,24 +125,24 @@ py -3 scripts/download_binaries.py
 npm run package
 ```
 
-The standalone application is generated at:
+The standalone application is output to:
 ```text
 desktop/release/win-unpacked/Viral Studio Pro.exe
 ```
 
 ---
 
-## Built-In Motion Graphics
+## Motion Archetypes
 
 | Graphic | Description |
 | :--- | :--- |
-| **Keyword Cascade** | Multi-line kinetic typography that reveals and highlights spoken keywords. |
+| **Keyword Cascade** | Multi-line kinetic typography that reveals and spotlights spoken keywords in real time. |
 | **Kinetic Word Wall** | Full-screen typography grid with spotlight word reveals. |
-| **Radial Gauge Ring** | Circular glowing dial for percentages and numerical stats. |
+| **Radial Gauge Ring** | Circular dial for visualizing percentage stats and numerical metrics. |
 | **Odometer + Spline** | Smooth rolling counter with an animatable area spline graph. |
 | **Explainer Timeline** | 3-step vertical progress timeline for sequential steps or points. |
-| **Spec Versus** | 2-column comparison card with a center VS badge for contrasting points. |
-| **Pull-Quote Card** | Editorial card (Glass, Paper, Dark) displaying a key statement. |
+| **Spec Versus** | 2-column comparative layout with a center badge for contrasting concepts. |
+| **Pull-Quote Card** | High-contrast editorial card (Glass, Paper, Dark) highlighting a key statement. |
 | **Yellow Circle Spotlight** | Camera punch-zoom with an animated highlight circle around the speaker. |
 | **Bar Comparison** | Comparative animated horizontal bars for metric comparisons. |
 | **Donut Metric** | Multi-slice breakdown ring with center readout and category legend. |
@@ -140,25 +150,38 @@ desktop/release/win-unpacked/Viral Studio Pro.exe
 
 ---
 
-## Tech Stack
+## Architecture
 
-- **Backend:** Python 3.10+, FastAPI, Faster-Whisper, PyTorch, CTranslate2, FFmpeg
-- **Frontend & Player:** React 18, Vite, Remotion 4.0, Tailwind CSS, Lucide Icons
-- **AI Planning:** Google Gemini API (`gemini-2.5-flash`, `gemini-3.5-flash-lite`, `gemini-3.8-flash`)
-- **Desktop:** Electron 33, PyInstaller
+```
+OpenShorts/
+├── backend/                  # FastAPI REST API & Processing Pipeline
+│   ├── api/                  # Endpoints (clips, framing, motion, export, settings)
+│   ├── services/             # Audio, Whisper transcription, AI director, FFmpeg
+│   └── main.py               # Server entrypoint
+├── frontend/                 # React 18 + Vite + Tailwind CSS + Remotion Studio
+│   ├── src/components/       # UI panels, inspectors, multi-track timeline, color pickers
+│   └── src/remotion/         # Remotion composition, archetypes, scene compiler
+├── desktop/                  # Electron desktop application & packaging scripts
+│   ├── src/                  # Main process, preload scripts, IPC bridges
+│   └── scripts/              # PyInstaller & binary packaging automation
+├── presets/                  # Visual styling themes (Opus, Fable, Cyber, Minimal, Vox)
+├── storage/                  # Local media storage (git-ignored for privacy)
+└── docker-compose.yml        # Containerized deployment specification
+```
 
 ---
 
 ## Contributing
 
-Pull requests and bug reports are welcome. If you run into issues or want to add a new motion graphic:
-1. Fork the repo and create your branch (`git checkout -b feature/my-feature`).
-2. Commit your changes (`git commit -m "feat: add feature"`).
-3. Push to your branch (`git push origin feature/my-feature`).
-4. Open a Pull Request.
+Contributions, bug reports, and suggestions are welcome.
+1. Fork the repository on GitHub.
+2. Create a feature branch: `git checkout -b feature/your-feature-name`.
+3. Commit your changes: `git commit -m "feat: description of changes"`.
+4. Push to your branch: `git push origin feature/your-feature-name`.
+5. Open a Pull Request.
 
 ---
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
