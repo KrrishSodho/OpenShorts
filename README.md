@@ -13,6 +13,11 @@ Turn long-form videos into high-retention 9:16 vertical shorts (Reels, TikToks, 
 
 [Features](#features) • [Quick Start](#quick-start) • [Desktop App](#desktop-app) • [Motion Archetypes](#motion-archetypes) • [Architecture](#architecture) • [Contributing](#contributing)
 
+<br/>
+<br/>
+
+<img src="docs/assets/studio_preview.png" alt="OpenShorts Studio Interface" width="100%" />
+
 </div>
 
 ---
