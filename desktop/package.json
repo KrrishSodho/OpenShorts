@@ -1,9 +1,9 @@
 {
-  "name": "openshort-desktop",
+  "name": "openshorts-desktop",
   "version": "4.2.0",
-  "description": "OpenShort - Open Source Self-Hosted Clip Generator",
+  "description": "OpenShorts - Open Source Self-Hosted Clip Generator",
   "main": "dist-electron/main/index.js",
-  "author": "OpenShort Team",
+  "author": "OpenShorts Team",
   "license": "MIT",
   "scripts": {
     "build:electron": "node ../frontend/node_modules/typescript/bin/tsc -p tsconfig.json",

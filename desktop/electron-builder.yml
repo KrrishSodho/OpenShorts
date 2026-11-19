@@ -1,7 +1,7 @@
 # PATH: desktop/electron-builder.yml
-appId: com.openshort.desktop
-productName: OpenShort
-copyright: Copyright © 2026 OpenShort Team
+appId: com.openshorts.desktop
+productName: OpenShorts
+copyright: Copyright © 2026 OpenShorts Team
 
 directories:
   output: release
@@ -38,7 +38,7 @@ win:
     - target: dir
       arch:
         - x64
-  artifactName: "OpenShort-Setup-${version}.${ext}"
+  artifactName: "OpenShorts-Setup-${version}.${ext}"
   icon: resources/icons/icon.png
 
 nsis:
@@ -46,7 +46,7 @@ nsis:
   allowToChangeInstallationDirectory: true
   createDesktopShortcut: true
   createStartMenuShortcut: true
-  shortcutName: "OpenShort"
+  shortcutName: "OpenShorts"
   runAfterFinish: true
 
 portable:

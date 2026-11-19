@@ -1,6 +1,6 @@
 <div align="center">
 
-# OpenShort
+# OpenShorts
 ### 🎬 Open Source Self-Hosted Clip Generator
 
 Turn long-form videos into high-retention 9:16 vertical shorts (Reels, TikToks, Shorts) with grounded speech AI, 14 editable Remotion motion graphics archetypes, and local offline processing.
@@ -47,8 +47,8 @@ Turn long-form videos into high-retention 9:16 vertical shorts (Reels, TikToks, 
 ### 2. Clone & Setup
 
 ```bash
-git clone https://github.com/your-username/OpenShort.git
-cd OpenShort
+git clone https://github.com/KrrishSodho/OpenShorts.git
+cd OpenShorts
 
 # Copy environment variables
 cp .env.example .env

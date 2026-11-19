@@ -1,8 +1,8 @@
 {
-  "name": "openshort-frontend",
+  "name": "openshorts-frontend",
   "private": true,
   "version": "1.0.0",
-  "description": "OpenShort - Frontend Studio Interface",
+  "description": "OpenShorts - Frontend Studio Interface",
   "type": "module",
   "scripts": {
     "dev": "vite",
