@@ -1,0 +1,49 @@
+{
+  "id": "studio_minimal_clean",
+  "name": "Studio Minimal Clean",
+  "description": "Ultra-clean Scandinavian aesthetic with dark slate matte backdrop, crisp emerald and titanium accents, and unobstructed clean speaker view.",
+  "composition": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "targetDurationSec": 50
+  },
+  "background": {
+    "type": "studio_solid",
+    "baseColor": "#0B0F17",
+    "gridLineColor": "#162032",
+    "gridSpacing": 36,
+    "vignette": false
+  },
+  "palette": {
+    "primaryAccent": "#10B981",
+    "secondaryAccent": "#64748B",
+    "darkAccent": "#0F172A",
+    "textPrimary": "#FFFFFF",
+    "textMuted": "#94A3B8",
+    "bannerBg": "#10B981",
+    "bannerText": "#FFFFFF"
+  },
+  "typography": {
+    "headlineFont": "Inter, sans-serif",
+    "monoFont": "JetBrains Mono, monospace",
+    "bodyFont": "Inter, sans-serif"
+  },
+  "speakerCard": {
+    "mode": "clean_fullscreen",
+    "borderColor": "transparent",
+    "borderWidth": 0
+  },
+  "captions": {
+    "style": "clean_subtitle",
+    "position": "bottom",
+    "activeWordColor": "#10B981",
+    "inactiveWordColor": "#64748B",
+    "highlightBox": false
+  },
+  "sfx": {
+    "hookImpact": "subtle_tick.mp3",
+    "wordPop": "subtle_tick.mp3",
+    "whooshTransition": "fast_whoosh.mp3"
+  }
+}

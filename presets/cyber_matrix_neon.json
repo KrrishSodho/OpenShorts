@@ -1,0 +1,52 @@
+{
+  "id": "cyber_matrix_neon",
+  "name": "Cyber Matrix Neon",
+  "description": "High-tech cyberpunk aesthetic with deep obsidian stage, neon cyan and violet accents, glowing wireframe grid, and terminal-style figure tags.",
+  "composition": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "targetDurationSec": 50
+  },
+  "background": {
+    "type": "dark_blueprint",
+    "baseColor": "#060810",
+    "gridLineColor": "#151B2E",
+    "gridSpacing": 28,
+    "vignette": true
+  },
+  "palette": {
+    "primaryAccent": "#00F5FF",
+    "secondaryAccent": "#A855F7",
+    "darkAccent": "#0B0F19",
+    "textPrimary": "#F8FAFC",
+    "textMuted": "#94A3B8",
+    "bannerBg": "#00F5FF",
+    "bannerText": "#060810"
+  },
+  "typography": {
+    "headlineFont": "Cabinet Grotesk, sans-serif",
+    "monoFont": "JetBrains Mono, monospace",
+    "bodyFont": "Inter, sans-serif"
+  },
+  "speakerCard": {
+    "mode": "cyber_glow_frame",
+    "borderColor": "#00F5FF",
+    "glowColor": "rgba(0, 245, 255, 0.4)",
+    "borderWidth": 3
+  },
+  "captions": {
+    "style": "kinetic_pop",
+    "position": "bottom",
+    "activeWordColor": "#00F5FF",
+    "inactiveWordColor": "#64748B",
+    "highlightBox": true,
+    "boxColor": "#00F5FF",
+    "boxTextColor": "#060810"
+  },
+  "sfx": {
+    "hookImpact": "digital_click.mp3",
+    "wordPop": "kinetic_pop.mp3",
+    "whooshTransition": "fast_whoosh.mp3"
+  }
+}

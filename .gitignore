@@ -1,0 +1,116 @@
+# ==========================================
+# OpenShort - Git Ignore Configuration
+# ==========================================
+
+# 1. Environments & Secrets
+.env
+.env.local
+.env.*.local
+backend/.env
+.venv/
+env/
+venv/
+ENV/
+*.pem
+*.key
+*.cert
+
+# 2. Python Cache & Build Artifacts
+__pycache__/
+backend/**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+
+# 3. Node & Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+.npm
+.eslintcache
+
+# 4. Desktop / Electron Packaging & Heavy Binaries
+# (Prevents 100MB+ files and 1GB+ bundles from entering git history)
+desktop/node_modules/
+desktop/dist/
+desktop/dist-electron/
+desktop/release/
+desktop/build/
+desktop/resources/bin/*.exe
+desktop/resources/backend/
+desktop/resources/frontend/
+desktop/pyinstaller/build/
+desktop/pyinstaller/dist/
+*.exe
+*.dll
+*.pyd
+*.dylib
+*.7z
+*.tar.gz
+*.zip
+*.asar
+
+# 5. Remotion & Media Cache
+.remotion/
+frontend/.remotion/
+frontend/node_modules/.remotion/
+chrome-headless-shell/
+
+# 6. Storage & Runtime Media
+# Keep folder structures via .gitkeep, ignore actual user videos/audio
+storage/downloads/*
+!storage/downloads/.gitkeep
+storage/output_renders/*
+!storage/output_renders/.gitkeep
+storage/transcripts/*
+!storage/transcripts/.gitkeep
+storage/plans/*
+!storage/plans/.gitkeep
+storage/temp/*
+!storage/temp/.gitkeep
+storage/broll/*
+!storage/broll/.gitkeep
+storage/masks/*
+!storage/masks/.gitkeep
+
+# Catch-all media files in runtime
+*.mp4
+*.mkv
+*.webm
+*.avi
+*.mov
+*.wav
+*.mp3
+
+# 7. Testing, QA Evidence & Temporary Scratch
+qa_verified_screenshots/
+scratch/
+test_evidence/
+browser_evidence/
+py
+
+# 8. OS & Editor Cache
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

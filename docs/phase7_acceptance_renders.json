@@ -1,0 +1,23 @@
+{
+  "Documentary Explainer": {
+    "mp4": "F:\\Ai Learning\\viral-studio\\storage\\output_renders\\dir1_documentary_explainer_final_burned.mp4",
+    "thumb": "F:\\Ai Learning\\viral-studio\\storage\\output_renders\\dir1_documentary_explainer_thumb.jpg",
+    "size_mb": 30.55,
+    "render_time_sec": 169.1,
+    "status": "PASS"
+  },
+  "Bold Kinetic Typography": {
+    "mp4": "F:\\Ai Learning\\viral-studio\\storage\\output_renders\\dir2_kinetic_typography_final_burned.mp4",
+    "thumb": "F:\\Ai Learning\\viral-studio\\storage\\output_renders\\dir2_kinetic_typography_thumb.jpg",
+    "size_mb": 29.37,
+    "render_time_sec": 167.2,
+    "status": "PASS"
+  },
+  "Restrained Editorial": {
+    "mp4": "F:\\Ai Learning\\viral-studio\\storage\\output_renders\\dir3_restrained_editorial_final_burned.mp4",
+    "thumb": "F:\\Ai Learning\\viral-studio\\storage\\output_renders\\dir3_restrained_editorial_thumb.jpg",
+    "size_mb": 30.26,
+    "render_time_sec": 174.5,
+    "status": "PASS"
+  }
+}

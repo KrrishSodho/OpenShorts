@@ -1,0 +1,49 @@
+{
+  "id": "vox_technical_explainer",
+  "name": "Vox Technical Explainer",
+  "description": "Information-dense documentary style featuring 3D floating assets, animated Recharts data graphs, KaTeX math formulas, and Rough.js sketchy annotations.",
+  "composition": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "targetDurationSec": 60
+  },
+  "background": {
+    "type": "dark_blueprint",
+    "baseColor": "#080F1E",
+    "gridLineColor": "#152238",
+    "gridSpacing": 32,
+    "vignette": true
+  },
+  "palette": {
+    "primaryAccent": "#FFE600",
+    "secondaryAccent": "#38BDF8",
+    "textPrimary": "#F8FAFC",
+    "textMuted": "#94A3B8",
+    "chartLine": "#FFE600",
+    "chartFill": "rgba(255, 230, 0, 0.15)"
+  },
+  "typography": {
+    "headlineFont": "Cabinet Grotesk, sans-serif",
+    "monoFont": "JetBrains Mono, monospace",
+    "mathFont": "KaTeX_Main, serif"
+  },
+  "features": {
+    "enable3D": true,
+    "enableCharts": true,
+    "enableMathFormulas": true,
+    "enableSketchAnnotations": true
+  },
+  "captions": {
+    "style": "technical_lower_third",
+    "textTransform": "none",
+    "activeWordColor": "#FFE600",
+    "inactiveWordColor": "#94A3B8",
+    "highlightUnderline": true
+  },
+  "sfx": {
+    "dataTick": "digital_click.mp3",
+    "chartRise": "whoosh_swell.mp3",
+    "formulaDraw": "chalk_scratch.mp3"
+  }
+}

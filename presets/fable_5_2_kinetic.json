@@ -1,0 +1,53 @@
+{
+  "id": "fable_5_2_kinetic",
+  "name": "Fable 5.2 Kinetic",
+  "description": "High-retention creator reel with animated behind-the-head giant typography, halftone dot patterns, rotomasked speaker cutout, and bouncy kinetic captions.",
+  "composition": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "targetDurationSec": 50
+  },
+  "background": {
+    "type": "halftone_matrix",
+    "baseColor": "#0A0A0A",
+    "dotColor": "#222222",
+    "dotRadius": 3,
+    "dotSpacing": 24,
+    "pulsingGrid": true
+  },
+  "palette": {
+    "primaryAccent": "#FFE600",
+    "highlightColor": "#FF2A54",
+    "textPrimary": "#FFFFFF",
+    "textMuted": "#888888",
+    "badgeBg": "#FF2A54",
+    "badgeText": "#FFFFFF"
+  },
+  "typography": {
+    "behindHeadFont": "Impact, sans-serif",
+    "captionFont": "Syne, sans-serif",
+    "accentFont": "Inter, sans-serif"
+  },
+  "speakerCard": {
+    "mode": "rotomask_fullscreen",
+    "enableBehindHeadText": true,
+    "textOutlineEffect": true,
+    "glowColor": "rgba(255, 42, 84, 0.3)"
+  },
+  "captions": {
+    "style": "kinetic_pop",
+    "position": "center_lower",
+    "textTransform": "uppercase",
+    "highlightBox": true,
+    "boxColor": "#FF2A54",
+    "boxTextColor": "#FFFFFF",
+    "inactiveTextColor": "#EEEEEE",
+    "bounceScale": 1.15
+  },
+  "sfx": {
+    "hookImpact": "sub_boom.mp3",
+    "wordPop": "kinetic_pop.mp3",
+    "whooshTransition": "fast_whoosh.mp3"
+  }
+}

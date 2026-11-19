@@ -1,0 +1,53 @@
+# PATH: desktop/electron-builder.yml
+appId: com.openshort.desktop
+productName: OpenShort
+copyright: Copyright © 2026 OpenShort Team
+
+directories:
+  output: release
+  buildResources: resources
+
+files:
+  - dist-electron/**/*
+  - package.json
+
+extraResources:
+  - from: dist/backend
+    to: backend
+    filter:
+      - "**/*"
+  - from: dist/frontend
+    to: frontend
+    filter:
+      - "**/*"
+  - from: resources/bin
+    to: bin
+    filter:
+      - "**/*"
+  - from: resources/splash
+    to: splash
+    filter:
+      - "**/*"
+  - from: resources/icons
+    to: icons
+    filter:
+      - "**/*"
+
+win:
+  target:
+    - target: dir
+      arch:
+        - x64
+  artifactName: "OpenShort-Setup-${version}.${ext}"
+  icon: resources/icons/icon.png
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: "OpenShort"
+  runAfterFinish: true
+
+portable:
+  artifactName: "ViralStudio-Portable-${version}.exe"

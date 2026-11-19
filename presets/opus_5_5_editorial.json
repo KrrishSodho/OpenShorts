@@ -1,0 +1,53 @@
+{
+  "id": "opus_5_5_editorial",
+  "name": "Opus 5.5 Editorial",
+  "description": "Swiss magazine grid layout with red accent banners, monospace technical figure tags, and PIP video cards.",
+  "composition": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "targetDurationSec": 50
+  },
+  "background": {
+    "type": "paper_grid",
+    "baseColor": "#F5F2EB",
+    "gridLineColor": "#E0DDD5",
+    "gridSpacing": 40,
+    "showCrosshairs": true
+  },
+  "palette": {
+    "primaryAccent": "#E63946",
+    "darkAccent": "#111827",
+    "textPrimary": "#0F172A",
+    "textMuted": "#64748B",
+    "bannerBg": "#E63946",
+    "bannerText": "#FFFFFF"
+  },
+  "typography": {
+    "headlineFont": "Syne, sans-serif",
+    "monoFont": "JetBrains Mono, monospace",
+    "bodyFont": "Inter, sans-serif"
+  },
+  "speakerCard": {
+    "mode": "split_pip_card",
+    "aspectRatio": "4:5",
+    "borderWidth": 4,
+    "borderColor": "#E63946",
+    "dropShadow": "0 20px 40px rgba(0,0,0,0.12)",
+    "showFigureLabel": true,
+    "figurePrefix": "FIG. 01 // INTERVIEW"
+  },
+  "captions": {
+    "style": "editorial_lower_pill",
+    "textTransform": "uppercase",
+    "activeWordColor": "#E63946",
+    "inactiveWordColor": "#475569",
+    "pillBackground": "#FFFFFF",
+    "pillBorder": "2px solid #E2E8F0"
+  },
+  "sfx": {
+    "cardSlide": "paper_slide.mp3",
+    "cutTransition": "camera_shutter.mp3",
+    "captionPop": "subtle_tick.mp3"
+  }
+}
